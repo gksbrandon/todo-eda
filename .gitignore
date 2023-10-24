@@ -1,0 +1,8 @@
+# Macbooks
+.DS_Store
+
+# Vendoring
+vendor
+
+# Rabbitmq
+./docker/rabbitmq/log

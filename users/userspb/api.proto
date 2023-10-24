@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package userspb;
+
+import "userspb/messages.proto";
+
+service UsersService {
+  rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse) {};
+  rpc AuthorizeUser(AuthorizeUserRequest) returns (AuthorizeUserResponse) {};
+  rpc GetUser(GetUserRequest) returns (GetUserResponse) {};
+}
+
+message RegisterUserRequest {
+  string name = 1;
+  string email = 2;
+}
+message RegisterUserResponse {
+  string id = 1;
+}
+
+message AuthorizeUserRequest {
+  string id = 1;
+}
+message AuthorizeUserResponse {}
+
+message GetUserRequest {
+  string id = 1;
+}
+message GetUserResponse {
+  User user = 1;
+}

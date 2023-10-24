@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package listspb;
+
+import "listspb/messages.proto";
+
+service ListsService {
+  rpc CreateList(CreateListRequest) returns (CreateListResponse) {};
+  rpc CompleteTask(CompleteTaskRequest) returns (CompleteTaskResponse) {};
+  rpc UncompleteTask(UncompleteTaskRequest) returns (UncompleteTaskResponse) {};
+  rpc AddTask(AddTaskRequest) returns (AddTaskResponse) {};
+  rpc RemoveTask(RemoveTaskRequest) returns (RemoveTaskResponse) {};
+  rpc GetTasks(GetTasksRequest) returns (GetTasksResponse) {};
+}
+
+message CreateListRequest {
+  string user_id = 1;
+}
+
+message CreateListResponse {
+  string id = 1;
+}
+
+message CompleteTaskRequest {
+  string id = 1;
+}
+
+message CompleteTaskResponse {}
+
+message UncompleteTaskRequest {
+  string id = 1;
+}
+
+message UncompleteTaskResponse {}
+
+message AddTaskRequest {
+  string list_id = 1;
+  string description = 2;
+}
+
+message AddTaskResponse {
+  string id = 1;
+}
+
+message RemoveTaskRequest {
+  string id = 1;
+}
+
+message RemoveTaskResponse {}
+
+message GetTasksRequest {
+  string list_id = 1;
+}
+
+message GetTasksResponse {
+  repeated Task tasks = 1;
+}

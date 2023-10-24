@@ -1,0 +1,19 @@
+type: google.api.Service
+config_version: 3
+http:
+  rules:
+    - selector: listspb.ListsService.CreateList
+      post: /api/lists
+      body: "*"
+    - selector: listspb.ListsService.AddTask
+      post: /api/lists/{list_id}/tasks
+      body: "*"
+    - selector: listspb.ListsService.CompleteTask
+      put: /api/lists/{id}/complete
+      body: "*"
+    - selector: listspb.ListsService.UncompleteTask
+      put: /api/lists/{id}/uncomplete
+    - selector: listspb.ListsService.RemoveTask
+      delete: /api/lists/tasks/{id}
+    - selector: listspb.ListsService.GetTasks
+      get: /api/lists/{list_id}/tasks

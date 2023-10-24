@@ -1,0 +1,45 @@
+openapiOptions:
+  file:
+    - file: "listspb/messages.proto"
+      option:
+        info:
+          title: List Management
+          version: "1.0.0"
+        basePath: /
+  method:
+    - method: listspb.ListsService.CreateList
+      option:
+        operationId: createList
+        tags:
+          - List
+        summary: Create a new list
+    - method: listspb.ListsService.CompleteTask
+      option:
+        operationId: completeTask
+        tags:
+          - Task
+        summary: Complete task
+    - method: listspb.ListsService.UncompleteTask
+      option:
+        operationId: uncompleteTask
+        tags:
+          - Task
+        summary: Uncomplete task
+    - method: listspb.ListsService.AddTask
+      option:
+        operationId: addTask
+        tags:
+          - Task
+        summary: Add a list task
+    - method: listspb.ListsService.RemoveTask
+      option:
+        operationId: removeTask
+        tags:
+          - Task
+        summary: Remove a list task
+    - method: listspb.ListsService.GetTasks
+      option:
+        operationId: getTasks
+        tags:
+          - Task
+        summary: Get a list of tasks

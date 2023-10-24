@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package listspb;
+
+message List {
+  string id = 1;
+  string user_id = 2;
+}
+
+message Task {
+  string id = 1;
+  string list_id = 2;
+  string description = 3;
+  bool completed = 4;
+}

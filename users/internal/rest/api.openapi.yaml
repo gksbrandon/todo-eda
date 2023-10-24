@@ -1,0 +1,21 @@
+openapiOptions:
+  file:
+    - file: "userspb/messages.proto"
+      option:
+        info:
+          title: Users
+          version: "1.0.0"
+        basePath: /
+  method:
+    - method: userspb.UsersService.RegisterUser
+      option:
+        operationId: createUser
+        tags:
+          - User
+        summary: Create a new user
+    - method: userspb.UsersService.GetUser
+      option:
+        operationId: getUser
+        tags:
+          - User
+        summary: Get a user

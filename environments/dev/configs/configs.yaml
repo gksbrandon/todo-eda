@@ -1,0 +1,3 @@
+PG_HOST: "postgres"
+PG_DB_NAME: "todo"
+PG_USER: "todo_user"

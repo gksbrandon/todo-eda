@@ -1,0 +1,2 @@
+ENV: "dev"
+PG_CONN: "host=postgres dbname=todo user=todo_user password=todo_pass"

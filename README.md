@@ -1,6 +1,6 @@
 # todo
 
-![screen-gif](./demo.gif)
+<img src="/demo.gif" width="250" height="250"/>
 
 ## 1.1 Instructions for Running the App
 

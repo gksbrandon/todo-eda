@@ -1,5 +1,7 @@
 # todo
 
+![screen-gif](./demo.gif)
+
 ## 1.1 Instructions for Running the App
 
 From the root folder, run:

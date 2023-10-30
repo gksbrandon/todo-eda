@@ -1,6 +1,6 @@
 # todo
 
-<img src="/demo.gif" width="250" height="250"/>
+<img src="/demo.gif" width="800" height="800"/>
 
 ## 1.1 Instructions for Running the App
 

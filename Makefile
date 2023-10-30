@@ -7,15 +7,16 @@ down:
 build:
 	docker-compose build monolith
 
-reset: down up
+logs:
+	docker-compose logs -f
+
+reset: down up logs
 
 update:
 	docker-compose down
 	docker-compose build monolith
 	docker-compose up -d
 
-logs:
-	docker-compose logs -f
 
 tidy:
 	go mod tidy

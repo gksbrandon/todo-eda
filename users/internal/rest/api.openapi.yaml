@@ -6,6 +6,32 @@ openapiOptions:
           title: Users
           version: "1.0.0"
         basePath: /
+        securityDefinitions:
+          security:
+            Bearer:
+              type: TYPE_API_KEY
+              name: Authorization
+              in: IN_HEADER
+              description: "Oauth2 access_token, prefixed by Bearer: Bearer <token>"
+            OAuth2:
+              type: TYPE_OAUTH2
+              flow: FLOW_ACCESS_CODE
+              authorization_url: "https://accounts.google.com/o/oauth2/auth"
+              token_url: "https://oauth2.googleapis.com/token"
+              name: OAuth2
+              scopes:
+                scope:
+                  https://www.googleapis.com/auth/userinfo.email: "Email"
+                  https://www.googleapis.com/auth/userinfo.profile: "Profile"
+        security:
+          - securityRequirement:
+              Bearer: {}
+          - securityRequirement:
+              Bearer: {}
+              OAuth2:
+                scope:
+                  - https://www.googleapis.com/auth/userinfo.email
+                  - https://www.googleapis.com/auth/userinfo.profile
   method:
     - method: userspb.UsersService.RegisterUser
       option:

@@ -154,5 +154,36 @@
         }
       }
     }
-  }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "description": "Oauth2 access_token, prefixed by Bearer: Bearer \u003ctoken\u003e",
+      "name": "Authorization",
+      "in": "header"
+    },
+    "OAuth2": {
+      "type": "oauth2",
+      "name": "OAuth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "tokenUrl": "https://oauth2.googleapis.com/token",
+      "scopes": {
+        "https://www.googleapis.com/auth/userinfo.email": "Email",
+        "https://www.googleapis.com/auth/userinfo.profile": "Profile"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": []
+    },
+    {
+      "Bearer": [],
+      "OAuth2": [
+        "https://www.googleapis.com/auth/userinfo.email",
+        "https://www.googleapis.com/auth/userinfo.profile"
+      ]
+    }
+  ]
 }

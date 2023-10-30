@@ -97,6 +97,12 @@ func run(log zerolog.Logger, cfg config.AppConfig) (err error) {
 		a.waitForWeb,
 	)
 
+	// Print out routes
+	chi.Walk(a.mux, func(method string, route string, handler http.Handler, middlewares ...func(http.Handler) http.Handler) error {
+		log.Info().Msgf("[%s]:\t'%s' has %d middlewares", method, route, len(middlewares))
+		return nil
+	})
+
 	return a.waiter.Wait()
 }
 
